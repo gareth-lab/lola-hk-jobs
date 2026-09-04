@@ -807,7 +807,6 @@
         <div class="top-actions">
           <button type="button" class="btn-primary" id="email-shortlist-btn">Email shortlist</button>
           <button type="button" class="btn-ghost" id="copy-shortlist-btn">Copy shortlist</button>
-          <button type="button" class="btn-ghost" id="export-btn">Export JSON</button>
           <button type="button" class="btn-danger" id="reset-btn">Reset rankings</button>
         </div>
       </div>
@@ -867,7 +866,7 @@
           </div>
           <p class="pref-note">
             <strong>How this feeds the smarter system:</strong>
-            Rankings stay on this device. <strong>Export JSON</strong> is what feeds future weekly scans &amp; helpers.
+            Every rank, note and flag is saved to the shared sheet the moment you tap it, and the weekly scanner uses them to decide what to show you next.
             <strong>Email shortlist</strong> is for a mentor or intro contact — a plain-text Love / Interested list you can send in one tap.
           </p>
         </section>
@@ -1514,7 +1513,6 @@
         setNote(input.dataset.noteId, input.value);
       });
 
-      document.getElementById("export-btn").addEventListener("click", exportJson);
       document.getElementById("email-shortlist-btn").addEventListener("click", emailShortlist);
       document.getElementById("copy-shortlist-btn").addEventListener("click", copyShortlist);
       document.getElementById("email-shortlist-btn-side").addEventListener("click", emailShortlist);
