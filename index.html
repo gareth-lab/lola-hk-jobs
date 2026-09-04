@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Lola · HK Opportunities — rank Hong Kong graduate roles" />
+  <title>Lola · HK Opportunities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1f2e;
+      --ink-soft: #3d4558;
+      --muted: #6b7385;
+      --line: #e4e7ee;
+      --paper: #f7f5f1;
+      --card: #ffffff;
+      --accent: #1e4d4a;
+      --accent-soft: #e8f2f1;
+      --love: #1e4d4a;
+      --love-bg: #e8f2f1;
+      --interested: #2c5282;
+      --interested-bg: #ebf2fa;
+      --maybe: #8a6d3b;
+      --maybe-bg: #f7f1e6;
+      --skip: #6b7385;
+      --skip-bg: #f0f1f4;
+      --shadow: 0 1px 2px rgba(26, 31, 46, 0.04), 0 8px 24px rgba(26, 31, 46, 0.06);
+      --radius: 14px;
+      --tap: 44px;
+      --font: "Source Sans 3", system-ui, sans-serif;
+      --display: "Fraunces", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input, textarea, select { font: inherit; }
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* —— Gate —— */
+    #gate {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(ellipse 80% 50% at 10% 0%, #e8f2f1 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 100% 100%, #f0ebe3 0%, transparent 50%),
+        var(--paper);
+    }
+    .gate-card {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .gate-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+    .gate-card h1 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.75rem;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+    .gate-card p {
+      color: var(--ink-soft);
+      margin: 0 0 24px;
+      font-size: 0.95rem;
+    }
+    .gate-form { display: flex; flex-direction: column; gap: 12px; }
+    .gate-form input {
+      width: 100%;
+      min-height: var(--tap);
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+    }
+    .gate-error {
+      color: #9b2c2c;
+      font-size: 0.875rem;
+      margin: 0;
+      min-height: 1.25em;
+    }
+    .btn-primary {
+      min-height: var(--tap);
+      padding: 10px 18px;
+      border: none;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-primary:hover { background: #163d3b; }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-ghost {
+      min-height: var(--tap);
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--ink-soft);
+      font-weight: 560;
+      cursor: pointer;
+    }
+    .btn-ghost:hover { background: var(--paper); }
+    .btn-danger {
+      min-height: var(--tap);
+      padding: 10px 14px;
+      border: 1px solid #e8c4c4;
+      border-radius: 10px;
+      background: #fdf6f6;
+      color: #9b2c2c;
+      font-weight: 560;
+      cursor: pointer;
+    }
+
+    /* —— App shell —— */
+    #app { display: none; }
+    #app.is-open { display: block; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(247, 245, 241, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .brand h1 {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    .brand span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .top-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 64px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 900px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        align-items: start;
+      }
+      .sidebar { position: sticky; top: 88px; }
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero h2 {
+      font-family: var(--display);
+      font-size: 1.35rem;
+      margin: 0 0 8px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .chip.muted {
+      background: var(--skip-bg);
+      color: var(--muted);
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .progress {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      font-weight: 560;
+    }
+    .progress strong { color: var(--ink); }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .filter-btn {
+      min-height: 36px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+      font-weight: 560;
+      cursor: pointer;
+    }
+    .filter-btn[aria-pressed="true"] {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff;
+    }
+
+    .job-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .job-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow);
+      transition: border-color 0.15s;
+    }
+    .job-card[data-rank="love"] { border-color: #b7d4d1; }
+    .job-card[data-rank="interested"] { border-color: #b8cce6; }
+    .job-card[data-rank="maybe"] { border-color: #e2d2b0; }
+    .job-card[data-rank="skip"] { border-color: #d5d8e0; opacity: 0.88; }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .job-company {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 4px;
+    }
+    .job-title {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.015em;
+      line-height: 1.3;
+    }
+    .job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .job-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: var(--paper);
+      color: var(--ink-soft);
+      border: 1px solid var(--line);
+    }
+    .digest { border: 1px solid var(--line); border-left: 4px solid var(--accent, #1f6f6b); border-radius: 0 12px 12px 0; padding: 12px 16px; margin: 0 0 16px; background: #fff; }
+    .digest h3 { margin: 4px 0 6px; font-size: 0.95rem; }
+    .digest ul { list-style: none; margin: 0 0 8px; padding: 0; }
+    .digest li { padding: 4px 0; font-size: 0.9rem; }
+    .digest li a { color: inherit; text-decoration: none; }
+    .digest li a:hover { text-decoration: underline; }
+    .digest li span { color: var(--ink-soft); font-size: 0.82rem; margin-left: 6px; }
+    .digest-foot { margin: 6px 0 0; font-size: 0.82rem; color: var(--ink-soft); }
+    .tag.visa-likely { background: var(--love-bg); color: var(--love); border-color: #b7d4d1; }
+    .tag.visa-possible { background: #fff7e6; color: #8a5a00; border-color: #f0dcb0; }
+    .tag.visa-unlikely, .tag.lang-req { background: #fbeceb; color: #9b2c22; border-color: #efc6c2; }
+    .tag.lang-bonus { background: #eef3fb; color: #2b4c8c; border-color: #c9d6ee; }
+    .flag-row { display: flex; align-items: center; gap: 10px; margin: 10px 0 4px; flex-wrap: wrap; }
+    .flag-btn {
+      font: inherit; font-size: 0.82rem; font-weight: 600; padding: 6px 12px; border-radius: 8px;
+      border: 1px dashed var(--line); background: transparent; color: var(--ink-soft); cursor: pointer;
+    }
+    .flag-btn[aria-pressed="true"] { border-style: solid; background: var(--accent, #1f6f6b); color: #fff; border-color: transparent; }
+    .flag-btn:focus-visible { outline: 2px solid var(--accent, #1f6f6b); outline-offset: 2px; }
+    .flag-help { font-size: 0.78rem; color: var(--ink-soft); }
+    .job-desc {
+      margin: 0 0 10px;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+    .fit {
+      margin: 0 0 14px;
+      padding: 10px 12px;
+      background: var(--paper);
+      border-radius: 10px;
+      font-size: 0.88rem;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+    }
+    .fit strong {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2px;
+      font-weight: 700;
+    }
+    .job-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .rank-btn {
+      min-height: 40px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+    }
+    .rank-btn[data-r="love"][aria-pressed="true"],
+    .rank-btn[data-r="love"]:hover { background: var(--love-bg); color: var(--love); border-color: #b7d4d1; }
+    .rank-btn[data-r="interested"][aria-pressed="true"],
+    .rank-btn[data-r="interested"]:hover { background: var(--interested-bg); color: var(--interested); border-color: #b8cce6; }
+    .rank-btn[data-r="maybe"][aria-pressed="true"],
+    .rank-btn[data-r="maybe"]:hover { background: var(--maybe-bg); color: var(--maybe); border-color: #e2d2b0; }
+    .rank-btn[data-r="skip"][aria-pressed="true"],
+    .rank-btn[data-r="skip"]:hover { background: var(--skip-bg); color: var(--skip); border-color: #d5d8e0; }
+
+    .note-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .note-row label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .note-row input {
+      width: 100%;
+      min-height: 40px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+    }
+    .job-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+    .deadline {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .empty {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      background: var(--card);
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .panel + .panel { margin-top: 14px; }
+    .panel h3 {
+      font-family: var(--display);
+      font-size: 1.05rem;
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+    .panel-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: -4px 0 12px;
+    }
+    .insight-block { margin-bottom: 14px; }
+    .insight-block:last-child { margin-bottom: 0; }
+    .insight-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .pill.up { background: var(--love-bg); color: var(--love); }
+    .pill.down { background: var(--skip-bg); color: var(--skip); }
+    .summary-text {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      margin: 0;
+      line-height: 1.55;
+    }
+    .legend {
+      display: grid;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+    }
+    .legend div { display: flex; justify-content: space-between; gap: 8px; }
+    .legend strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+    .footer-note {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 520px) {
+      .gate-card { padding: 28px 20px; }
+      .job-card { padding: 16px; }
+      .rank-btn { flex: 1 1 calc(50% - 8px); justify-content: center; text-align: center; }
+      .job-actions { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+
+    .apply-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .apply-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      border: none;
+      cursor: pointer;
+    }
+    .apply-link:hover { background: #163d3b; color: #fff; }
+    .btn-how {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #c5ddd9;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+    .btn-how:hover { background: #d7e8e6; }
+
+    .pref-note {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .pref-note strong { color: var(--ink-soft); font-weight: 600; }
+
+    .share-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .share-actions .btn-primary,
+    .share-actions .btn-ghost {
+      width: 100%;
+    }
+
+    /* —— Apply interstitial —— */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(26, 31, 46, 0.45);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .modal-backdrop.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    @media (min-width: 640px) {
+      .modal-backdrop {
+        align-items: center;
+        padding: 24px;
+      }
+    }
+    .modal {
+      width: min(560px, 100%);
+      max-height: min(92dvh, 720px);
+      overflow: auto;
+      background: var(--card);
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 -8px 40px rgba(26, 31, 46, 0.18);
+      padding: 22px 22px 28px;
+      transform: translateY(24px);
+      transition: transform 0.22s ease;
+    }
+    .modal-backdrop.is-open .modal { transform: translateY(0); }
+    @media (min-width: 640px) {
+      .modal {
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        transform: translateY(12px) scale(0.98);
+      }
+      .modal-backdrop.is-open .modal { transform: translateY(0) scale(1); }
+    }
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .modal-kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 4px;
+    }
+    .modal h2 {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+    .modal-company {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 4px 0 0;
+    }
+    .modal-close {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink-soft);
+      font-size: 1.25rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal-close:hover { background: var(--skip-bg); }
+    .search-terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0 0 16px;
+    }
+    .search-term {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px dashed #b7d4d1;
+    }
+    .steps-label, .tips-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+    .steps-list {
+      margin: 0 0 16px;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+      display: grid;
+      gap: 8px;
+    }
+    .steps-list li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+    .steps-list li::before {
+      content: counter(step);
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+    }
+    .portal-tips {
+      margin: 0 0 14px;
+      padding: 12px 14px;
+      background: var(--paper);
+      border-radius: 10px;
+      font-size: 0.88rem;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+      line-height: 1.5;
+    }
+    .deadline-note {
+      margin: 0 0 16px;
+      font-size: 0.85rem;
+      color: var(--maybe);
+      font-weight: 560;
+    }
+    .modal-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .modal-cta .apply-link { width: 100%; text-align: center; }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      z-index: 200;
+      background: var(--ink);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 24px rgba(26, 31, 46, 0.25);
+      opacity: 0;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      pointer-events: none;
+    }
+    .toast.is-show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 520px) {
+      .top-actions { width: 100%; }
+      .top-actions button { flex: 1 1 calc(50% - 8px); }
+      .apply-actions { width: 100%; }
+      .apply-actions .apply-link,
+      .apply-actions .btn-how { flex: 1 1 calc(50% - 8px); }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="gate" role="dialog" aria-labelledby="gate-title" aria-modal="true">
+    <div class="gate-card">
+      <p class="gate-kicker">Private prototype</p>
+      <h1 id="gate-title">Lola · HK Opportunities</h1>
+      <p>A calm place to review and rank Hong Kong graduate roles. Enter the shared password to unlock.</p>
+      <form class="gate-form" id="gate-form" autocomplete="off">
+        <label class="visually-hidden" for="password" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Password</label>
+        <input id="password" type="password" placeholder="Password" required autofocus />
+        <button type="submit" class="btn-primary">Unlock</button>
+        <p class="gate-error" id="gate-error" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="app">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <h1>Lola · HK Opportunities</h1>
+          <span>Graduate / analyst shortlist · Hong Kong</span>
+        </div>
+        <div class="top-actions">
+          <button type="button" class="btn-primary" id="email-shortlist-btn">Email shortlist</button>
+          <button type="button" class="btn-ghost" id="copy-shortlist-btn">Copy shortlist</button>
+          <button type="button" class="btn-ghost" id="export-btn">Export JSON</button>
+          <button type="button" class="btn-danger" id="reset-btn">Reset rankings</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <div class="main-col">
+        <section class="hero" aria-label="About Lola">
+          <h2>About this shortlist</h2>
+          <p>
+            Built for <strong>Lola Jones</strong> — MA (Hons) International Relations, University of St Andrews
+            (grad June 2027). Interests: international development, foreign policy, political risk.
+            Preference stack: <em>consulting / strategy → political risk / research → finance macro → wide net</em>.
+            Languages: English &amp; Dutch (native), French (working).
+          </p>
+          <div class="stack" aria-hidden="true">
+            <span class="chip">Consulting / strategy</span>
+            <span class="chip">Political risk</span>
+            <span class="chip">Finance · macro</span>
+            <span class="chip muted">Wide net</span>
+          </div>
+        </section>
+
+        <div style="height: 20px"></div>
+
+        <div class="toolbar">
+          <div class="progress" id="progress" aria-live="polite">0 of 0 ranked</div>
+          <section class="digest" id="digest" aria-label="This week" hidden></section>
+      <div class="filters" role="group" aria-label="Filter by rank">
+            <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-btn" data-filter="unranked" aria-pressed="false">Unranked</button>
+            <button type="button" class="filter-btn" data-filter="love" aria-pressed="false">Love</button>
+            <button type="button" class="filter-btn" data-filter="interested" aria-pressed="false">Interested</button>
+            <button type="button" class="filter-btn" data-filter="maybe" aria-pressed="false">Maybe</button>
+            <button type="button" class="filter-btn" data-filter="skip" aria-pressed="false">Skip</button>
+          </div>
+        </div>
+
+        <div class="job-list" id="job-list"></div>
+      </div>
+
+      <aside class="sidebar" aria-label="Insights">
+        <section class="panel">
+          <h3>Insights</h3>
+          <p class="panel-sub">Updates as you rank — drawn from your Love / Interested / Skip choices.</p>
+          <div class="insight-block">
+            <div class="insight-label">Drawn to</div>
+            <div class="pill-row" id="drawn-to"><span class="pill up">Rank a few to see patterns</span></div>
+          </div>
+          <div class="insight-block">
+            <div class="insight-label">Less drawn to</div>
+            <div class="pill-row" id="less-drawn"><span class="pill down">—</span></div>
+          </div>
+          <div class="insight-block">
+            <div class="insight-label">Summary</div>
+            <p class="summary-text" id="summary-text">Start ranking roles. Your preferences will appear here in plain English.</p>
+          </div>
+          <p class="pref-note">
+            <strong>How this feeds the smarter system:</strong>
+            Rankings stay on this device. <strong>Export JSON</strong> is what feeds future weekly scans &amp; helpers.
+            <strong>Email shortlist</strong> is for a mentor or intro contact — a plain-text Love / Interested list you can send in one tap.
+          </p>
+        </section>
+
+        <section class="panel">
+          <h3>Share shortlist</h3>
+          <p class="panel-sub">Send Love + Interested roles to a mentor or anyone helping with intros. Maybe roles appear under “Also considering”.</p>
+          <div class="share-actions">
+            <button type="button" class="btn-primary" id="email-shortlist-btn-side">Email shortlist</button>
+            <button type="button" class="btn-ghost" id="copy-shortlist-btn-side">Copy shortlist</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h3>Your tally</h3>
+          <div class="legend" id="tally"></div>
+        </section>
+      </aside>
+    </main>
+
+    <p class="footer-note">
+      Prototype for personal use · Rankings stay in this browser (localStorage)
+    </p>
+  </div>
+
+  <div class="modal-backdrop" id="apply-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal" role="document">
+      <div class="modal-top">
+        <div>
+          <p class="modal-kicker">How to apply</p>
+          <h2 id="modal-title"></h2>
+          <p class="modal-company" id="modal-company"></p>
+        </div>
+        <button type="button" class="modal-close" id="modal-close" aria-label="Close">×</button>
+      </div>
+      <p class="steps-label">Try searching for</p>
+      <div class="search-terms" id="modal-terms"></div>
+      <p class="steps-label">Concrete steps</p>
+      <ol class="steps-list" id="modal-steps"></ol>
+      <p class="tips-label">Portal tips</p>
+      <div class="portal-tips" id="modal-tips"></div>
+      <p class="deadline-note" id="modal-deadline" hidden></p>
+      <div class="modal-cta">
+        <a class="apply-link" id="modal-apply" href="#" target="_blank" rel="noopener noreferrer">Open careers page →</a>
+        <button type="button" class="btn-ghost" id="modal-dismiss">Got it — I’ll open it myself</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+
+  <script>
+    (function () {
+      const PASSWORD = "st-andrews-2027";
+      const STORAGE_UNLOCK = "lola-hk-jobs-unlocked";
+      const STORAGE_RANKS = "lola-hk-jobs-rankings";
+
+// ---- Data source -------------------------------------------------------
+      // DATA_URL: the Google Apps Script web-app URL (see apps-script.gs).
+      // Leave empty to run purely from jobs.json + localStorage.
+      const DATA_URL = "";
+      let JOBS = [];
+      let remoteState = {};
+      let loadError = "";
+
+      async function loadJobs() {
+        if (DATA_URL) {
+          try {
+            const r = await fetch(DATA_URL + "?action=all", { redirect: "follow" });
+            const data = await r.json();
+            if (Array.isArray(data.jobs) && data.jobs.length) {
+              JOBS = data.jobs;
+              remoteState = data.rankings || {};
+              // remote rankings win over stale local ones
+              Object.keys(remoteState).forEach((id) => { state[id] = Object.assign({}, state[id] || {}, remoteState[id]); });
+              saveState();
+              return;
+            }
+          } catch (e) { console.warn("Remote load failed, falling back to jobs.json", e); }
+        }
+        try {
+          const r = await fetch("jobs.json");
+          const data = await r.json();
+          JOBS = data.jobs || [];
+        } catch (e) {
+          loadError = location.protocol === "file:"
+            ? "The role list couldn’t load because this page was opened straight from disk. Browsers block that. In the folder run  python3 -m http.server 8080  and open http://localhost:8080 instead, or host it on GitHub Pages."
+            : "The role list couldn’t load (jobs.json missing or the data URL isn’t responding). Check the folder and DATA_URL in index.html.";
+        }
+      }
+
+      function pushState(id) {
+        if (!DATA_URL) return;
+        const s = getJobState(id);
+        const body = JSON.stringify({ action: "rank", id, rank: s.rank, note: s.note || "", flag: !!s.flag, updatedAt: new Date().toISOString() });
+        try { fetch(DATA_URL, { method: "POST", mode: "no-cors", body, keepalive: true }); } catch (_) {}
+      }
+
+
+      const RANK_LABELS = {
+        love: "Love",
+        interested: "Interested",
+        maybe: "Maybe",
+        skip: "Skip"
+      };
+      const RANK_WEIGHT = { love: 3, interested: 2, maybe: 1, skip: -2 };
+
+      let state = loadState();
+      let filter = "all";
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_RANKS);
+          if (!raw) return {};
+          const parsed = JSON.parse(raw);
+          return parsed && typeof parsed === "object" ? parsed : {};
+        } catch (_) {
+          return {};
+        }
+      }
+
+      function saveState() {
+        localStorage.setItem(STORAGE_RANKS, JSON.stringify(state));
+      }
+
+      function isUnlocked() {
+        return localStorage.getItem(STORAGE_UNLOCK) === "1";
+      }
+
+      function unlock() {
+        localStorage.setItem(STORAGE_UNLOCK, "1");
+        document.getElementById("gate").style.display = "none";
+        document.getElementById("app").classList.add("is-open");
+        render();
+      }
+
+      function getJobState(id) {
+        return state[id] || { rank: null, note: "", flag: false };
+      }
+
+      function setFlag(id) {
+        const cur = getJobState(id);
+        state[id] = { rank: cur.rank, note: cur.note || "", flag: !cur.flag };
+        saveState();
+        pushState(id);
+        render();
+      }
+
+      function setRank(id, rank) {
+        const cur = getJobState(id);
+        const nextRank = cur.rank === rank ? null : rank;
+        state[id] = { rank: nextRank, note: cur.note || "", flag: !!cur.flag };
+        saveState();
+        pushState(id);
+        render();
+      }
+
+      function setNote(id, note) {
+        const cur = getJobState(id);
+        state[id] = { rank: cur.rank, note: note, flag: !!cur.flag };
+        saveState();
+        clearTimeout(setNote._t);
+        setNote._t = setTimeout(() => pushState(id), 800);
+        updateInsightsOnly();
+      }
+
+      function visaBadge(job) {
+        const t = job.visaTier || "unknown";
+        const label = { likely: "Visa: likely sponsor", possible: "Visa: possible", unlikely: "Visa: unlikely to sponsor", unknown: "Visa: unknown" }[t] || "Visa: unknown";
+        return `<span class="tag visa-${escapeHtml(t)}">${label}</span>`;
+      }
+      function langBadge(job) {
+        let out = "";
+        if (job.languageReq && job.languageReq !== "none") out += `<span class="tag lang-req">Language: ${escapeHtml(job.languageReq)}</span>`;
+        (job.langBonus || []).forEach((l) => { out += `<span class="tag lang-bonus">${escapeHtml(l)} is a plus</span>`; });
+        return out;
+      }
+
+      function renderDigest() {
+        const el = document.getElementById("digest");
+        const now = Date.now(), day = 86400000;
+        const parse = (d) => { const t = Date.parse(d); return isNaN(t) ? null : t; };
+        const closing = JOBS.filter((j) => { const t = parse(j.deadlineDate); return t && t - now >= -day && t - now <= 14 * day; })
+          .sort((a, b) => parse(a.deadlineDate) - parse(b.deadlineDate));
+        const fresh = JOBS.filter((j) => { const t = parse(j.addedAt); return t && now - t <= 7 * day && (j.addedBy || "") !== "seed"; });
+        const unranked = JOBS.filter((j) => !getJobState(j.id).rank).length;
+        if (!closing.length && !fresh.length) { el.hidden = true; return; }
+        const row = (j, extra) => `<li><a href="#" data-jump="${j.id}"><strong>${escapeHtml(j.company)}</strong> — ${escapeHtml(j.title)}</a> <span>${escapeHtml(extra)}</span></li>`;
+        el.innerHTML = `
+          ${closing.length ? `<h3>Closing in the next 14 days</h3><ul>${closing.map((j) => row(j, "by " + j.deadlineDate)).join("")}</ul>` : ""}
+          ${fresh.length ? `<h3>New this week</h3><ul>${fresh.map((j) => row(j, j.location)).join("")}</ul>` : ""}
+          ${unranked ? `<p class="digest-foot">${unranked} role${unranked === 1 ? "" : "s"} still unranked.</p>` : ""}`;
+        el.hidden = false;
+      }
+
+      function rankedCount() {
+        return JOBS.filter((j) => getJobState(j.id).rank).length;
+      }
+
+      function computeInsights() {
+        const sectorScore = {};
+        const keywordScore = {};
+        const counts = { love: 0, interested: 0, maybe: 0, skip: 0, unranked: 0 };
+        const loved = [];
+        const skipped = [];
+
+        JOBS.forEach((job) => {
+          const { rank } = getJobState(job.id);
+          if (!rank) {
+            counts.unranked += 1;
+            return;
+          }
+          counts[rank] += 1;
+          const w = RANK_WEIGHT[rank] || 0;
+          job.sectors.forEach((s) => {
+            sectorScore[s] = (sectorScore[s] || 0) + w;
+          });
+          job.keywords.forEach((k) => {
+            keywordScore[k] = (keywordScore[k] || 0) + w;
+          });
+          if (rank === "love" || rank === "interested") loved.push(job);
+          if (rank === "skip") skipped.push(job);
+        });
+
+        const sortEntries = (obj) =>
+          Object.entries(obj).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+
+        const drawnSectors = sortEntries(sectorScore).filter(([, v]) => v > 0).slice(0, 4);
+        const drawnKeywords = sortEntries(keywordScore).filter(([, v]) => v > 0).slice(0, 5);
+        const lessSectors = sortEntries(sectorScore).filter(([, v]) => v < 0).reverse().slice(0, 3);
+        const lessKeywords = sortEntries(keywordScore).filter(([, v]) => v < 0).reverse().slice(0, 4);
+
+        const drawn = [
+          ...drawnSectors.map(([k]) => k),
+          ...drawnKeywords.map(([k]) => k)
+        ].filter((v, i, a) => a.indexOf(v) === i).slice(0, 6);
+
+        const less = [
+          ...lessSectors.map(([k]) => k),
+          ...lessKeywords.map(([k]) => k)
+        ].filter((v, i, a) => a.indexOf(v) === i).slice(0, 5);
+
+        let summary;
+        const n = rankedCount();
+        if (n === 0) {
+          summary = "Start ranking roles. Your preferences will appear here in plain English.";
+        } else if (n < 3) {
+          summary = `You've ranked ${n} of ${JOBS.length}. Keep going — patterns get clearer after a handful of Love / Skip choices.`;
+        } else {
+          const topBits = drawn.slice(0, 3);
+          const lowBits = less.slice(0, 2);
+          const loveNames = loved.slice(0, 2).map((j) => j.company);
+          let s = `From ${n} rankings, you lean toward ${topBits.length ? topBits.join(", ") : "a mixed set"}.`;
+          if (loveNames.length) {
+            s += ` Strongest signals so far: ${loveNames.join(" and ")}.`;
+          }
+          if (lowBits.length) {
+            s += ` You're cooler on ${lowBits.join(" and ")}.`;
+          }
+          if (counts.love + counts.interested >= counts.skip && counts.love + counts.interested > 0) {
+            s += " Overall tone: curious and selective rather than closed-off.";
+          } else if (counts.skip > counts.love + counts.interested) {
+            s += " Overall tone: picky — useful; it means the shortlist can shrink fast.";
+          }
+          summary = s;
+        }
+
+        return { drawn, less, summary, counts };
+      }
+
+      function exportJson() {
+        const insights = computeInsights();
+        const rankings = JOBS.map((job) => {
+          const s = getJobState(job.id);
+          return {
+            id: job.id,
+            company: job.company,
+            title: job.title,
+            location: job.location,
+            sectors: job.sectors,
+            keywords: job.keywords,
+            rank: s.rank,
+            note: s.note || "",
+            flagForIntro: !!s.flag,
+            visaTier: job.visaTier || "unknown",
+            languageReq: job.languageReq || "none",
+            langBonus: job.langBonus || [],
+            applyUrl: job.applyUrl,
+            deadline: job.deadline,
+            applyGuidance: {
+              searchTerms: job.searchTerms || [],
+              steps: job.steps || [],
+              portalTips: job.portalTips || "",
+              deadlineNote: job.deadlineNote || ""
+            }
+          };
+        });
+        const payload = {
+          meta: {
+            title: "Lola · HK Opportunities",
+            candidate: "Lola Jones",
+            programme: "MA (Hons) International Relations, University of St Andrews",
+            graduation: "June 2027",
+            preferenceStack: [
+              "consulting/strategy",
+              "political risk/research",
+              "finance macro/markets",
+              "wide net"
+            ],
+            exportedAt: new Date().toISOString(),
+            ranked: rankedCount(),
+            total: JOBS.length
+          },
+          rankings,
+          preferenceSummary: {
+            drawnTo: insights.drawn,
+            lessDrawnTo: insights.less,
+            plainEnglish: insights.summary,
+            tally: insights.counts
+          }
+        };
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "lola-preferences.json";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      }
+
+      function renderInsights() {
+        const { drawn, less, summary, counts } = computeInsights();
+        const drawnEl = document.getElementById("drawn-to");
+        const lessEl = document.getElementById("less-drawn");
+        drawnEl.innerHTML = drawn.length
+          ? drawn.map((d) => `<span class="pill up">${escapeHtml(d)}</span>`).join("")
+          : `<span class="pill up">Rank a few to see patterns</span>`;
+        lessEl.innerHTML = less.length
+          ? less.map((d) => `<span class="pill down">${escapeHtml(d)}</span>`).join("")
+          : `<span class="pill down">—</span>`;
+        document.getElementById("summary-text").textContent = summary;
+
+        document.getElementById("tally").innerHTML = `
+          <div><span>Love</span><strong>${counts.love}</strong></div>
+          <div><span>Interested</span><strong>${counts.interested}</strong></div>
+          <div><span>Maybe</span><strong>${counts.maybe}</strong></div>
+          <div><span>Skip</span><strong>${counts.skip}</strong></div>
+          <div><span>Unranked</span><strong>${counts.unranked}</strong></div>
+        `;
+      }
+
+      function updateInsightsOnly() {
+        renderInsights();
+      }
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function filteredJobs() {
+        return JOBS.filter((job) => {
+          const rank = getJobState(job.id).rank;
+          if (filter === "all") return true;
+          if (filter === "unranked") return !rank;
+          return rank === filter;
+        });
+      }
+
+      function render() {
+        document.getElementById("progress").innerHTML =
+          `<strong>${rankedCount()}</strong> of <strong>${JOBS.length}</strong> ranked`;
+
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          btn.setAttribute("aria-pressed", btn.dataset.filter === filter ? "true" : "false");
+        });
+
+        const list = document.getElementById("job-list");
+        if (loadError) {
+          list.innerHTML = `<p class="empty">${escapeHtml(loadError)}</p>`;
+          renderInsights();
+          return;
+        }
+        const jobs = filteredJobs();
+        if (!jobs.length) {
+          list.innerHTML = `<div class="empty">No roles in this filter. Try “All” or another bucket.</div>`;
+        } else {
+          list.innerHTML = jobs.map((job) => {
+            const s = getJobState(job.id);
+            const rank = s.rank;
+            return `
+              <article class="job-card" data-id="${job.id}" data-rank="${rank || ""}">
+                <div class="job-head">
+                  <div>
+                    <p class="job-company">${escapeHtml(job.company)}</p>
+                    <h3 class="job-title">${escapeHtml(job.title)}</h3>
+                  </div>
+                </div>
+                <div class="job-meta">
+                  <span>📍 ${escapeHtml(job.location)}</span>
+                  ${rank ? `<span>· Ranked: <strong>${RANK_LABELS[rank]}</strong></span>` : ""}
+                </div>
+                <div class="tags">
+                  ${job.sectors.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
+                  ${visaBadge(job)}${langBadge(job)}
+                </div>
+                <p class="job-desc">${escapeHtml(job.description)}</p>
+                <div class="fit"><strong>Why it might fit</strong>${escapeHtml(job.fit)}</div>
+                <div class="job-actions" role="group" aria-label="Rank ${escapeHtml(job.company)}">
+                  ${["love", "interested", "maybe", "skip"].map((r) => `
+                    <button type="button" class="rank-btn" data-r="${r}" data-id="${job.id}"
+                      aria-pressed="${rank === r ? "true" : "false"}">${RANK_LABELS[r]}</button>
+                  `).join("")}
+                </div>
+                <div class="flag-row">
+                  <button type="button" class="flag-btn" data-flag-id="${job.id}" aria-pressed="${s.flag ? "true" : "false"}">${s.flag ? "Flagged for an intro" : "Flag for an intro"}</button>
+                  <span class="flag-help">An intro would actually move this one</span>
+                </div>
+                <div class="note-row">
+                  <label for="note-${job.id}">Optional note</label>
+                  <input id="note-${job.id}" type="text" maxlength="200" placeholder="One-line note for yourself or Gareth…"
+                    value="${escapeHtml(s.note || "")}" data-note-id="${job.id}" />
+                </div>
+                <div class="job-footer">
+                  <span class="deadline">Deadline: ${escapeHtml(job.deadline)}</span>
+                  <div class="apply-actions">
+                    <a class="apply-link" href="${escapeHtml(job.applyUrl)}" target="_blank" rel="noopener noreferrer">Open careers page</a>
+                    <button type="button" class="btn-how" data-how-id="${job.id}">How to apply</button>
+                  </div>
+                </div>
+              </article>
+            `;
+          }).join("");
+        }
+
+        renderInsights();
+        renderDigest();
+      }
+
+
+      function showToast(msg) {
+        const el = document.getElementById("toast");
+        el.textContent = msg || "Copied";
+        el.classList.add("is-show");
+        clearTimeout(showToast._t);
+        showToast._t = setTimeout(() => el.classList.remove("is-show"), 2200);
+      }
+
+      function buildShortlistBody() {
+        const love = [];
+        const interested = [];
+        const maybe = [];
+        JOBS.forEach((job) => {
+          const s = getJobState(job.id);
+          if (s.rank === "love") love.push({ job, note: s.note || "" });
+          else if (s.rank === "interested") interested.push({ job, note: s.note || "" });
+          else if (s.rank === "maybe") maybe.push({ job, note: s.note || "" });
+        });
+
+        if (!love.length && !interested.length) {
+          return { empty: true, text: "" };
+        }
+
+        const insights = computeInsights();
+        const formatBlock = (items) =>
+          items
+            .map(({ job, note }, i) => {
+              const lines = [
+                (i + 1) + ". " + job.company + " — " + job.title,
+                "   Sector: " + job.sectors.join(", "),
+                "   Why it fits: " + job.fit,
+                "   Visa: " + (job.visaTier || "unknown") + (job.languageReq && job.languageReq !== "none" ? " · Language: " + job.languageReq : ""),
+                "   Apply: " + job.applyUrl
+              ];
+              if (getJobState(job.id).flag) lines.push("   ** Flagged: an intro would help here **");
+              if (note) lines.push("   Lola's note: " + note);
+              return lines.join("\n");
+            })
+            .join("\n\n");
+
+        const parts = [];
+        parts.push("Hi —");
+        parts.push("");
+        parts.push("Here's my shortlist from the Lola · HK Opportunities prototype.");
+        parts.push("");
+
+        if (love.length) {
+          parts.push("LOVE");
+          parts.push(formatBlock(love));
+          parts.push("");
+        }
+        if (interested.length) {
+          parts.push("INTERESTED");
+          parts.push(formatBlock(interested));
+          parts.push("");
+        }
+        if (maybe.length) {
+          parts.push("ALSO CONSIDERING (Maybe)");
+          parts.push(formatBlock(maybe));
+          parts.push("");
+        }
+
+        if (insights.drawn.length || insights.summary) {
+          parts.push("PREFERENCE SNAPSHOT");
+          if (insights.drawn.length) parts.push("Drawn to: " + insights.drawn.join(", "));
+          if (insights.less.length) parts.push("Less drawn to: " + insights.less.join(", "));
+          parts.push(insights.summary);
+          parts.push("");
+        }
+
+        parts.push("Thanks —");
+        parts.push("Lola");
+        parts.push("");
+
+        return { empty: false, text: parts.join("\n") };
+      }
+
+      function emailShortlist() {
+        const { empty, text } = buildShortlistBody();
+        if (empty) {
+          alert("Rank at least one role as Love or Interested before emailing a shortlist.");
+          return;
+        }
+        const subject = encodeURIComponent("Lola shortlist — HK opportunities");
+        const body = encodeURIComponent(text);
+        window.location.href = `mailto:?subject=${subject}&body=${body}`;
+      }
+
+      async function copyShortlist() {
+        const { empty, text } = buildShortlistBody();
+        if (empty) {
+          alert("Rank at least one role as Love or Interested before copying a shortlist.");
+          return;
+        }
+        try {
+          await navigator.clipboard.writeText(text);
+          showToast("Copied");
+        } catch (_) {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+            showToast("Copied");
+          } catch (e2) {
+            alert("Couldn't copy automatically — select and copy from the email draft instead.");
+            emailShortlist();
+          }
+          ta.remove();
+        }
+      }
+
+      function openApplyModal(jobId) {
+        const job = JOBS.find((j) => j.id === jobId);
+        if (!job) return;
+        const backdrop = document.getElementById("apply-modal");
+        document.getElementById("modal-title").textContent = job.title;
+        document.getElementById("modal-company").textContent = job.company + " · " + job.location;
+        document.getElementById("modal-terms").innerHTML = (job.searchTerms || [])
+          .map((t) => `<span class="search-term">${escapeHtml(t)}</span>`)
+          .join("");
+        document.getElementById("modal-steps").innerHTML = (job.steps || [])
+          .map((s) => `<li>${escapeHtml(s)}</li>`)
+          .join("");
+        document.getElementById("modal-tips").textContent = job.portalTips || "";
+        const dn = document.getElementById("modal-deadline");
+        if (job.deadlineNote) {
+          dn.hidden = false;
+          dn.textContent = "Timing note: " + job.deadlineNote;
+        } else {
+          dn.hidden = true;
+          dn.textContent = "";
+        }
+        const link = document.getElementById("modal-apply");
+        link.href = job.applyUrl;
+        backdrop.hidden = false;
+        requestAnimationFrame(() => backdrop.classList.add("is-open"));
+        document.getElementById("modal-close").focus();
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeApplyModal() {
+        const backdrop = document.getElementById("apply-modal");
+        backdrop.classList.remove("is-open");
+        document.body.style.overflow = "";
+        setTimeout(() => {
+          if (!backdrop.classList.contains("is-open")) backdrop.hidden = true;
+        }, 220);
+      }
+
+      // Events
+      document.getElementById("gate-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const val = document.getElementById("password").value.trim();
+        const err = document.getElementById("gate-error");
+        if (val === PASSWORD) {
+          err.textContent = "";
+          unlock();
+        } else {
+          err.textContent = "That password doesn’t match. Try again.";
+        }
+      });
+
+      document.getElementById("digest").addEventListener("click", (e) => {
+        const a = e.target.closest("[data-jump]");
+        if (!a) return;
+        e.preventDefault();
+        filter = "all"; render();
+        const card = document.querySelector(`.job-card[data-id="${a.dataset.jump}"]`);
+        if (card) card.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      document.querySelector(".filters").addEventListener("click", (e) => {
+        const btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        filter = btn.dataset.filter;
+        render();
+      });
+
+      document.getElementById("job-list").addEventListener("click", (e) => {
+        const how = e.target.closest("[data-how-id]");
+        if (how) {
+          openApplyModal(how.dataset.howId);
+          return;
+        }
+        const flag = e.target.closest("[data-flag-id]");
+        if (flag) { setFlag(flag.dataset.flagId); return; }
+        const btn = e.target.closest(".rank-btn");
+        if (!btn) return;
+        setRank(btn.dataset.id, btn.dataset.r);
+      });
+
+      document.getElementById("job-list").addEventListener("input", (e) => {
+        const input = e.target.closest("input[data-note-id]");
+        if (!input) return;
+        setNote(input.dataset.noteId, input.value);
+      });
+
+      document.getElementById("export-btn").addEventListener("click", exportJson);
+      document.getElementById("email-shortlist-btn").addEventListener("click", emailShortlist);
+      document.getElementById("copy-shortlist-btn").addEventListener("click", copyShortlist);
+      document.getElementById("email-shortlist-btn-side").addEventListener("click", emailShortlist);
+      document.getElementById("copy-shortlist-btn-side").addEventListener("click", copyShortlist);
+
+      document.getElementById("modal-close").addEventListener("click", closeApplyModal);
+      document.getElementById("modal-dismiss").addEventListener("click", closeApplyModal);
+      document.getElementById("apply-modal").addEventListener("click", (e) => {
+        if (e.target.id === "apply-modal") closeApplyModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeApplyModal();
+      });
+
+      document.getElementById("reset-btn").addEventListener("click", () => {
+        if (!confirm("Clear all rankings and notes? This can’t be undone.")) return;
+        state = {};
+        saveState();
+        render();
+      });
+
+      loadJobs().then(() => {
+        if (isUnlocked()) unlock();
+      });
+    })();
+  </script>
+</body>
+</html>
