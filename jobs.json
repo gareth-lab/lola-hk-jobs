@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04",
+  "updatedAt": "2026-09-27",
   "jobs": [
     {
       "id": "ow-consultant",
@@ -42,7 +42,8 @@
       "languageReq": "none",
       "langBonus": [
         "French"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "eurasia-analyst",
@@ -60,7 +61,7 @@
         "forecasting"
       ],
       "description": "Political risk shop advising corporates and investors on geopolitics, elections, and policy. Analysts write briefings, brief clients, and track Asia political developments.",
-      "fit": "Closest to your IR/political-risk interests, but Eurasia's Asia analyst seats are few, usually Singapore or Tokyo, and rarely sponsor a fresh grad. Treat as a headhunter-intro target, not an application.",
+      "fit": "Closest to your IR/political-risk interests, but Eurasia's Asia analyst seats are few, usually Singapore or Tokyo, and rarely sponsor a fresh grad. Treat as a mentor-intro target, not an application.",
       "applyUrl": "https://www.eurasiagroup.net/careers",
       "deadline": "Rolling",
       "searchTerms": [
@@ -82,7 +83,8 @@
       "deadlineNote": "Truly rolling — apply when a fit appears; don’t wait for a “campus season”.",
       "visaTier": "unlikely",
       "languageReq": "none",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "control-risks",
@@ -125,7 +127,8 @@
       "languageReq": "none",
       "langBonus": [
         "French"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "oxford-analytica",
@@ -144,7 +147,7 @@
         "advisory"
       ],
       "description": "Independent advisory firm producing geopolitical and economic analysis for governments and corporates. Roles emphasize crisp writing and judgment under uncertainty.",
-      "fit": "Writing-sample driven, remote-friendly, thin HK presence. Good for the headhunter list and for getting bylines; unlikely to be the visa sponsor.",
+      "fit": "Writing-sample driven, remote-friendly, thin HK presence. Good for the mentor list and for getting bylines; unlikely to be the visa sponsor.",
       "applyUrl": "https://www.oxan.com/careers/",
       "deadline": "Rolling",
       "searchTerms": [
@@ -166,7 +169,8 @@
       "deadlineNote": "Openings are infrequent; treat the careers page as a monthly check, not a campus portal.",
       "visaTier": "unlikely",
       "languageReq": "none",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "mckinsey-ba",
@@ -206,7 +210,8 @@
       "deadlineNote": "Class of 2027 BA apps for Asia often open mid-year — confirm live dates; don’t rely on last year’s calendar.",
       "visaTier": "likely",
       "languageReq": "Cantonese or Mandarin usually required",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "bcg-associate",
@@ -246,7 +251,8 @@
       "deadlineNote": "Greater China campus deadlines are often earlier than US — check the posting month by month.",
       "visaTier": "likely",
       "languageReq": "Cantonese or Mandarin usually required",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "jpm-markets",
@@ -288,7 +294,8 @@
       "deadlineNote": "Deadlines differ by programme and region — read the specific APAC posting, not the US MBA calendar.",
       "visaTier": "likely",
       "languageReq": "Mandarin preferred for most HK seats",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "bnp-apac-grad",
@@ -323,7 +330,8 @@
       "languageReq": "none",
       "langBonus": [
         "French"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "socgen-vie",
@@ -361,7 +369,8 @@
       "langBonus": [
         "French",
         "Dutch"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "hsbc-grad",
@@ -397,7 +406,8 @@
       "languageReq": "varies by stream",
       "langBonus": [
         "French"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "stanchart-grad",
@@ -429,7 +439,8 @@
       "deadlineNote": "Autumn 2026 likely — verify.",
       "visaTier": "likely",
       "languageReq": "varies by stream",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "swire-mt",
@@ -462,7 +473,8 @@
       "deadlineNote": "Autumn 2026 — verify.",
       "visaTier": "likely",
       "languageReq": "none",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "jardines-et",
@@ -493,7 +505,8 @@
       "deadlineNote": "Autumn 2026 — verify.",
       "visaTier": "likely",
       "languageReq": "none",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "brunswick",
@@ -507,7 +520,7 @@
       ],
       "keywords": [],
       "description": "Financial and political communications advisory; HK office handles cross-border M&A, IPO and crisis work for Asian and Western clients.",
-      "fit": "Strategic comms is where IR graduates who write well end up. Brunswick hires juniors ad hoc and values European-language coverage for Continental clients. Strong headhunter-intro target.",
+      "fit": "Strategic comms is where IR graduates who write well end up. Brunswick hires juniors ad hoc and values European-language coverage for Continental clients. Strong mentor-intro target.",
       "applyUrl": "https://www.brunswickgroup.com/careers/",
       "deadline": "Rolling",
       "searchTerms": [
@@ -528,7 +541,8 @@
       "langBonus": [
         "French",
         "Dutch"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "teneo",
@@ -553,7 +567,7 @@
       "steps": [
         "Open Teneo careers.",
         "Filter Hong Kong.",
-        "Apply or send a speculative note via the headhunter."
+        "Apply or send a speculative note via the mentor."
       ],
       "portalTips": "Their geopolitics practice publishes; cite something specific.",
       "deadlineNote": "Rolling.",
@@ -561,7 +575,8 @@
       "languageReq": "none",
       "langBonus": [
         "French"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "fgs-global",
@@ -591,7 +606,8 @@
       "deadlineNote": "Rolling.",
       "visaTier": "possible",
       "languageReq": "none",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "hinrich",
@@ -623,7 +639,8 @@
       "deadlineNote": "Rolling.",
       "visaTier": "unlikely",
       "languageReq": "none",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "asia-society-hk",
@@ -654,7 +671,8 @@
       "deadlineNote": "Rolling.",
       "visaTier": "unlikely",
       "languageReq": "none",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "french-chamber-hk",
@@ -689,7 +707,8 @@
       "langBonus": [
         "French",
         "Dutch"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "dutch-chamber-hk",
@@ -723,7 +742,8 @@
       "languageReq": "Dutch useful",
       "langBonus": [
         "Dutch"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "hk-digital-assets",
@@ -756,7 +776,8 @@
       "deadlineNote": "Rolling.",
       "visaTier": "likely",
       "languageReq": "none",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "unilever-uflp",
@@ -791,7 +812,8 @@
       "languageReq": "none",
       "langBonus": [
         "Dutch"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "loreal-mt",
@@ -826,7 +848,8 @@
       "languageReq": "none",
       "langBonus": [
         "French"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "lvmh-richemont",
@@ -862,7 +885,8 @@
       "languageReq": "none",
       "langBonus": [
         "French"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "pernod-diageo",
@@ -897,7 +921,8 @@
       "languageReq": "none",
       "langBonus": [
         "French"
-      ]
+      ],
+      "region": "HK"
     },
     {
       "id": "nestle-pg",
@@ -929,7 +954,8 @@
       "deadlineNote": "Confirm.",
       "visaTier": "likely",
       "languageReq": "varies — some HK sales roles ask for Cantonese",
-      "langBonus": []
+      "langBonus": [],
+      "region": "HK"
     },
     {
       "id": "sg-mnc-grad",
@@ -968,7 +994,8 @@
       "languageReq": "none",
       "langBonus": [
         "Dutch"
-      ]
+      ],
+      "region": "SG"
     },
     {
       "id": "iseas",
@@ -983,7 +1010,7 @@
       ],
       "keywords": [],
       "description": "Singapore's leading Southeast Asia policy institute; junior research officer roles support programmes on regional politics, economics and security.",
-      "fit": "The best pure-IR seat in the region for a fresh graduate. Publishing record and a writing sample matter; a good headhunter-intro target too.",
+      "fit": "The best pure-IR seat in the region for a fresh graduate. Publishing record and a writing sample matter; a good mentor-intro target too.",
       "applyUrl": "https://www.iseas.edu.sg",
       "deadline": "Rolling",
       "searchTerms": [
@@ -1000,7 +1027,8 @@
       "deadlineNote": "Rolling.",
       "visaTier": "possible",
       "languageReq": "none",
-      "langBonus": []
+      "langBonus": [],
+      "region": "SG"
     },
     {
       "id": "sea-development",
@@ -1036,6 +1064,645 @@
       "deadlineNote": "Rolling.",
       "visaTier": "possible",
       "languageReq": "none",
+      "langBonus": [
+        "French"
+      ],
+      "region": "SEA"
+    },
+    {
+      "id": "chatham-house",
+      "company": "Chatham House",
+      "title": "Research Assistant / Programme Coordinator",
+      "location": "London",
+      "region": "UK",
+      "sectors": [
+        "Think tank",
+        "Foreign policy",
+        "Research"
+      ],
+      "keywords": [],
+      "description": "The UK's leading international-affairs institute. Junior research and programme roles across Asia-Pacific, Europe, Africa and Global Economy programmes.",
+      "fit": "Your subject, in the building where it's done. Roles are few and competitive; a published piece and a mentor intro both matter. British passport means no visa question.",
+      "applyUrl": "https://www.chathamhouse.org/about-us/careers",
+      "deadline": "Rolling — check monthly",
+      "searchTerms": [
+        "Chatham House",
+        "research assistant",
+        "programme coordinator"
+      ],
+      "steps": [
+        "Open Chatham House careers.",
+        "Filter to research and programme roles.",
+        "Apply with a writing sample on a regional topic."
+      ],
+      "portalTips": "Research assistant roles often ask for a language; French counts.",
+      "deadlineNote": "Rolling.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": [
+        "French",
+        "Dutch"
+      ]
+    },
+    {
+      "id": "iiss-rusi",
+      "company": "IISS / RUSI",
+      "title": "Research Analyst / Research Assistant",
+      "location": "London",
+      "region": "UK",
+      "sectors": [
+        "Think tank",
+        "Security",
+        "Political risk"
+      ],
+      "keywords": [],
+      "description": "The two London defence and security institutes. Junior analyst roles support regional programmes and data projects.",
+      "fit": "Political and security risk without the corporate wrapper. RUSI in particular hires recent graduates as research assistants.",
+      "applyUrl": "https://www.iiss.org/about-us/careers",
+      "deadline": "Rolling",
+      "searchTerms": [
+        "IISS",
+        "RUSI",
+        "research assistant",
+        "analyst"
+      ],
+      "steps": [
+        "Check both institutes' careers pages.",
+        "Look for research assistant or project roles.",
+        "Apply with a security-themed writing sample."
+      ],
+      "portalTips": "RUSI's careers page lists openings under Vacancies; IISS under About us.",
+      "deadlineNote": "Rolling.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": []
+    },
+    {
+      "id": "control-risks-london",
+      "company": "Control Risks",
+      "title": "Analyst — Global Risk Analysis",
+      "location": "London",
+      "region": "UK",
+      "sectors": [
+        "Political risk",
+        "Research",
+        "Advisory"
+      ],
+      "keywords": [],
+      "description": "The London HQ runs the largest political-risk analysis team in the firm. Structured analyst intake plus rolling hires.",
+      "fit": "Same firm as the HK entry but London is the head office and hires more juniors. Apply here even if HK is the goal; internal moves to Asia happen.",
+      "applyUrl": "https://www.controlrisks.com/careers",
+      "deadline": "Analyst intake typically opens autumn — confirm",
+      "searchTerms": [
+        "Control Risks",
+        "analyst",
+        "London",
+        "global risk analysis"
+      ],
+      "steps": [
+        "Open Control Risks careers.",
+        "Filter London and analyst level.",
+        "Apply; the process includes a written analysis test."
+      ],
+      "portalTips": "Say explicitly that you'd relocate to Asia — it's a differentiator for London hires.",
+      "deadlineNote": "Confirm.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": [
+        "French"
+      ]
+    },
+    {
+      "id": "oliver-wyman-london",
+      "company": "Oliver Wyman",
+      "title": "Consultant (2027 intake)",
+      "location": "London",
+      "region": "UK",
+      "sectors": [
+        "Consulting",
+        "Strategy",
+        "Financial services"
+      ],
+      "keywords": [],
+      "description": "OW's largest office. Full graduate intake across financial services, public sector and strategy.",
+      "fit": "The realistic route to the HK office is two years in London first. Apply London, state HK as a mobility preference.",
+      "applyUrl": "https://careers.oliverwyman.com",
+      "deadline": "Typically opens Sep, closes Oct–Nov — confirm",
+      "searchTerms": [
+        "Oliver Wyman",
+        "London",
+        "consultant",
+        "2027"
+      ],
+      "steps": [
+        "Open OW careers.",
+        "Filter London, entry level, 2027.",
+        "Apply early — rolling review."
+      ],
+      "portalTips": "Their application asks for office preferences; list London first, Hong Kong second.",
+      "deadlineNote": "Confirm.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": [
+        "French"
+      ]
+    },
+    {
+      "id": "mbb-london",
+      "company": "McKinsey / BCG / Bain",
+      "title": "Business Analyst / Associate (London, 2027)",
+      "location": "London",
+      "region": "UK",
+      "sectors": [
+        "Consulting",
+        "Strategy"
+      ],
+      "keywords": [],
+      "description": "The three strategy firms' London offices, the largest intakes in Europe.",
+      "fit": "Where the HK versions of these roles said 'apply London', this is that entry. Standard MBB case process; IR is a common background here.",
+      "applyUrl": "https://www.mckinsey.com/careers/search-jobs",
+      "deadline": "Typically Sep–Oct for 2027 — confirm each",
+      "searchTerms": [
+        "McKinsey",
+        "BCG",
+        "Bain",
+        "London",
+        "Business Analyst",
+        "2027"
+      ],
+      "steps": [
+        "Apply to each separately.",
+        "Filter London, undergraduate, 2027 start.",
+        "Book case-practice sessions through St Andrews consulting society."
+      ],
+      "portalTips": "All three run campus events at St Andrews in October; attend.",
+      "deadlineNote": "Confirm each.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": []
+    },
+    {
+      "id": "fco-fast-stream",
+      "company": "UK Civil Service Fast Stream — Diplomatic & Development",
+      "title": "Fast Streamer (Diplomatic and Development)",
+      "location": "London",
+      "region": "UK",
+      "sectors": [
+        "Government",
+        "Foreign policy",
+        "Grad scheme"
+      ],
+      "keywords": [],
+      "description": "The UK government's graduate scheme; the Diplomatic and Development stream places graduates in the FCDO with overseas postings later.",
+      "fit": "The most direct foreign-policy career route on any of these lists. British passport required — you have it. Long process (opens autumn, offers spring).",
+      "applyUrl": "https://www.faststream.gov.uk",
+      "deadline": "Typically opens late Sep, closes Oct — confirm",
+      "searchTerms": [
+        "Fast Stream",
+        "Diplomatic",
+        "Development",
+        "2027"
+      ],
+      "steps": [
+        "Open faststream.gov.uk.",
+        "Register when applications open.",
+        "Complete online tests within the window; they close hard."
+      ],
+      "portalTips": "Nationality and residency rules apply — check the eligibility page before spending time.",
+      "deadlineNote": "Confirm — window is short.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": [
+        "French"
+      ]
+    },
+    {
+      "id": "brunswick-london",
+      "company": "Brunswick / Teneo / FGS Global",
+      "title": "Executive / Associate (London)",
+      "location": "London",
+      "region": "UK",
+      "sectors": [
+        "Communications",
+        "Advisory"
+      ],
+      "keywords": [],
+      "description": "The three strategic-communications firms' London head offices; largest junior intakes in the group.",
+      "fit": "Same logic as the HK entries, with more seats. Brunswick runs a structured graduate programme in London.",
+      "applyUrl": "https://www.brunswickgroup.com/careers/",
+      "deadline": "Brunswick graduate scheme typically autumn — confirm",
+      "searchTerms": [
+        "Brunswick",
+        "Teneo",
+        "FGS",
+        "London",
+        "graduate",
+        "executive"
+      ],
+      "steps": [
+        "Check Brunswick's graduate programme page first.",
+        "Then Teneo and FGS London careers.",
+        "Apply with two published pieces."
+      ],
+      "portalTips": "Brunswick's programme asks for a written exercise; your Foreign Affairs Review work is the prep.",
+      "deadlineNote": "Confirm.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": [
+        "French",
+        "Dutch"
+      ]
+    },
+    {
+      "id": "hsbc-sc-london",
+      "company": "HSBC / Standard Chartered",
+      "title": "Global Graduate Programme (London)",
+      "location": "London",
+      "region": "UK",
+      "sectors": [
+        "Banking",
+        "Grad scheme"
+      ],
+      "keywords": [],
+      "description": "Both banks' London graduate intakes. Same programmes as HK, applied from the UK.",
+      "fit": "Apply London as the fallback to the HK application to the same scheme — the banks allow one application per cycle, so pick the office deliberately.",
+      "applyUrl": "https://www.hsbc.com/careers/students-and-graduates",
+      "deadline": "Typically Aug–Oct — confirm",
+      "searchTerms": [
+        "HSBC",
+        "Standard Chartered",
+        "London",
+        "graduate",
+        "2027"
+      ],
+      "steps": [
+        "Decide HK or London per bank before applying — one application each.",
+        "Apply to the international or global banking streams."
+      ],
+      "portalTips": "Both banks' schemes include international rotations; say Asia.",
+      "deadlineNote": "Confirm; one application per bank per cycle.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": []
+    },
+    {
+      "id": "clingendael",
+      "company": "Clingendael Institute / HCSS",
+      "title": "Junior Researcher / Research Assistant",
+      "location": "The Hague",
+      "region": "NL",
+      "sectors": [
+        "Think tank",
+        "Foreign policy",
+        "Security"
+      ],
+      "keywords": [],
+      "description": "The Netherlands' two foreign-policy and security institutes, both in The Hague. Junior researcher and trainee roles.",
+      "fit": "Dutch-native and an IR degree from a UK university is exactly their junior profile. The Hague is the international-law and policy capital; roles are few but fit is high.",
+      "applyUrl": "https://www.clingendael.org/about-us/vacancies",
+      "deadline": "Rolling",
+      "searchTerms": [
+        "Clingendael",
+        "HCSS",
+        "junior researcher",
+        "vacature"
+      ],
+      "steps": [
+        "Check both institutes' vacancy pages.",
+        "Apply in Dutch where the posting is in Dutch.",
+        "Send a writing sample on a European or Asian topic."
+      ],
+      "portalTips": "Clingendael also runs a traineeship — check timing.",
+      "deadlineNote": "Rolling.",
+      "visaTier": "likely",
+      "languageReq": "Dutch required or preferred",
+      "langBonus": [
+        "Dutch"
+      ]
+    },
+    {
+      "id": "nl-mfa-trainee",
+      "company": "Dutch Ministry of Foreign Affairs (BZ)",
+      "title": "Rijkstraineeship / BZ traineeship",
+      "location": "The Hague",
+      "region": "NL",
+      "sectors": [
+        "Government",
+        "Foreign policy",
+        "Grad scheme"
+      ],
+      "keywords": [],
+      "description": "The Dutch civil-service graduate scheme and the foreign ministry's own trainee route. Dutch nationality required.",
+      "fit": "The Dutch equivalent of the Fast Stream. You qualify on nationality; the process is in Dutch. Strongest pure foreign-policy route on the NL list.",
+      "applyUrl": "https://www.werkenvoornederland.nl",
+      "deadline": "Rijkstraineeship rounds typically twice a year — confirm",
+      "searchTerms": [
+        "Rijkstraineeship",
+        "Buitenlandse Zaken",
+        "traineeship",
+        "2027"
+      ],
+      "steps": [
+        "Open werkenvoornederland.nl and search Rijkstraineeship.",
+        "Check the BZ traineeship separately on the ministry site.",
+        "Apply in Dutch."
+      ],
+      "portalTips": "Two intake rounds a year; the spring round matters for a summer 2027 start.",
+      "deadlineNote": "Confirm dates.",
+      "visaTier": "likely",
+      "languageReq": "Dutch required",
+      "langBonus": [
+        "Dutch"
+      ]
+    },
+    {
+      "id": "ing-abn-nl",
+      "company": "ING / ABN AMRO / Rabobank",
+      "title": "Graduate / Traineeship (Amsterdam)",
+      "location": "Amsterdam",
+      "region": "NL",
+      "sectors": [
+        "Banking",
+        "Grad scheme",
+        "European employer"
+      ],
+      "keywords": [],
+      "description": "The three Dutch banks' Amsterdam traineeships. English-language working environments, Dutch a plus.",
+      "fit": "The Amsterdam version of the HK bank-scheme safety net. ING's international talent programme has Asia rotations, which keeps HK in play.",
+      "applyUrl": "https://www.ing.jobs",
+      "deadline": "Typically Sep–Nov for the following year — confirm",
+      "searchTerms": [
+        "ING",
+        "ABN AMRO",
+        "Rabobank",
+        "traineeship",
+        "Amsterdam",
+        "2027"
+      ],
+      "steps": [
+        "Check each bank's traineeship page.",
+        "Apply to one stream each.",
+        "Note ING's international programme separately."
+      ],
+      "portalTips": "ING explicitly recruits international profiles for the Amsterdam intake; Dutch-native with a UK degree is a strong combination.",
+      "deadlineNote": "Confirm.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": [
+        "Dutch"
+      ]
+    },
+    {
+      "id": "unilever-heineken-nl",
+      "company": "Unilever / Heineken / Philips / Shell",
+      "title": "Graduate programme (Rotterdam / Amsterdam / The Hague)",
+      "location": "Amsterdam / Rotterdam",
+      "region": "NL",
+      "sectors": [
+        "Consumer goods",
+        "Grad scheme",
+        "European employer"
+      ],
+      "keywords": [],
+      "description": "The Dutch multinationals' home-market graduate intakes. Rotational, English-first, with Asia postings later.",
+      "fit": "Where a Dutch-native profile carries most weight anywhere. Apply here rather than the HK or Singapore intakes for the same companies unless HK is explicitly listed.",
+      "applyUrl": "https://careers.unilever.com",
+      "deadline": "Typically autumn — confirm per company",
+      "searchTerms": [
+        "Unilever",
+        "Heineken",
+        "Philips",
+        "Shell",
+        "graduate programme",
+        "Netherlands",
+        "2027"
+      ],
+      "steps": [
+        "Check each company's Netherlands graduate page.",
+        "Apply once per company; state Asia as a rotation preference."
+      ],
+      "portalTips": "Unilever's Future Leaders Programme NL intake is the most structured of the four.",
+      "deadlineNote": "Confirm per company.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": [
+        "Dutch"
+      ]
+    },
+    {
+      "id": "nl-comms-risk",
+      "company": "Hill+Knowlton / Edelman / Control Risks Amsterdam",
+      "title": "Junior consultant / analyst (Amsterdam)",
+      "location": "Amsterdam",
+      "region": "NL",
+      "sectors": [
+        "Communications",
+        "Advisory",
+        "Political risk"
+      ],
+      "keywords": [],
+      "description": "Amsterdam offices of the comms and risk consultancies. Smaller than London; hires are ad hoc.",
+      "fit": "Breadth entry. Dutch-native is a genuine differentiator for public-affairs work here.",
+      "applyUrl": "https://www.controlrisks.com/careers",
+      "deadline": "Rolling",
+      "searchTerms": [
+        "Amsterdam",
+        "junior consultant",
+        "public affairs",
+        "analyst"
+      ],
+      "steps": [
+        "Check careers pages; filter Amsterdam.",
+        "Send speculative applications with a writing sample where nothing is open."
+      ],
+      "portalTips": "Public-affairs roles in Amsterdam almost always want Dutch; you clear that.",
+      "deadlineNote": "Rolling.",
+      "visaTier": "possible",
+      "languageReq": "Dutch preferred",
+      "langBonus": [
+        "Dutch"
+      ]
+    },
+    {
+      "id": "vie-paris",
+      "company": "V.I.E. via Business France",
+      "title": "V.I.E. placements from Paris-based companies (worldwide, incl. Hong Kong and Singapore)",
+      "location": "Paris (posting abroad)",
+      "region": "FR",
+      "sectors": [
+        "Visa route",
+        "Banking",
+        "Luxury",
+        "European employer"
+      ],
+      "keywords": [],
+      "description": "French companies post V.I.E. roles abroad through Business France. As an EU national under 28 you can be placed anywhere they operate, including Hong Kong.",
+      "fit": "The single strongest route across all three lists: a French company sends you to Asia and carries the visa. Filter the portal by destination, not by Paris. Working French usually sufficient.",
+      "applyUrl": "https://mon-vie-via.businessfrance.fr/",
+      "deadline": "Rolling — check weekly",
+      "searchTerms": [
+        "V.I.E.",
+        "Hong Kong",
+        "Singapore",
+        "analyste",
+        "junior"
+      ],
+      "steps": [
+        "Create an account on the V.I.E. portal.",
+        "Save searches for Hong Kong and Singapore across finance, luxury and consulting.",
+        "Apply directly; the company interviews."
+      ],
+      "portalTips": "Postings close fast. Weekly check is the minimum.",
+      "deadlineNote": "Rolling.",
+      "visaTier": "likely",
+      "languageReq": "French often required",
+      "langBonus": [
+        "French",
+        "Dutch"
+      ]
+    },
+    {
+      "id": "ifri-iris",
+      "company": "IFRI / IRIS / Institut Montaigne",
+      "title": "Assistant de recherche / Chargé d'études",
+      "location": "Paris",
+      "region": "FR",
+      "sectors": [
+        "Think tank",
+        "Foreign policy",
+        "Research"
+      ],
+      "keywords": [],
+      "description": "Paris's foreign-policy institutes. Junior research roles, mostly in French.",
+      "fit": "Fit on subject; French at working level is the constraint — postings usually want fluent written French. Realistic as a second-year target once French improves, or now with an intro.",
+      "applyUrl": "https://www.ifri.org",
+      "deadline": "Rolling",
+      "searchTerms": [
+        "IFRI",
+        "IRIS",
+        "Institut Montaigne",
+        "assistant de recherche",
+        "stage"
+      ],
+      "steps": [
+        "Check each institute's careers / recrutement page.",
+        "Apply in French with a French writing sample."
+      ],
+      "portalTips": "Many roles are listed as 'stage' (internship) even for graduates; a paid stage is a normal entry point in France.",
+      "deadlineNote": "Rolling.",
+      "visaTier": "possible",
+      "languageReq": "French required",
+      "langBonus": [
+        "French"
+      ]
+    },
+    {
+      "id": "bnp-socgen-paris",
+      "company": "BNP Paribas / Société Générale / Crédit Agricole CIB",
+      "title": "Graduate programme (Paris)",
+      "location": "Paris",
+      "region": "FR",
+      "sectors": [
+        "Banking",
+        "Grad scheme",
+        "European employer"
+      ],
+      "keywords": [],
+      "description": "The French banks' home-market graduate intakes; the same firms as the HK V.I.E. and BNP APAC entries.",
+      "fit": "Apply Paris only if the HK or V.I.E. route doesn't land — one application per bank per cycle. Paris programmes lead to Asia postings through the V.I.E. anyway.",
+      "applyUrl": "https://group.bnpparibas/en/careers",
+      "deadline": "Typically autumn — confirm",
+      "searchTerms": [
+        "BNP Paribas",
+        "Société Générale",
+        "Crédit Agricole",
+        "graduate",
+        "Paris",
+        "2027"
+      ],
+      "steps": [
+        "Decide HK vs Paris per bank before applying.",
+        "Check whether the Paris programme explicitly includes an international V.I.E. year."
+      ],
+      "portalTips": "SocGen's graduate programme includes a V.I.E. year abroad as standard — worth checking.",
+      "deadlineNote": "Confirm.",
+      "visaTier": "likely",
+      "languageReq": "French working level usually enough",
+      "langBonus": [
+        "French"
+      ]
+    },
+    {
+      "id": "lvmh-loreal-paris",
+      "company": "LVMH / L'Oréal / Kering / Hermès",
+      "title": "Graduate / management trainee (Paris)",
+      "location": "Paris",
+      "region": "FR",
+      "sectors": [
+        "Luxury",
+        "Consumer goods",
+        "Grad scheme",
+        "European employer"
+      ],
+      "keywords": [],
+      "description": "The luxury and beauty groups' Paris headquarters intakes, with Asia rotations in most programmes.",
+      "fit": "Same companies as the HK list, applied at HQ. French working level is usually fine for HQ graduate schemes; Asia rotations are common and often go to people who ask.",
+      "applyUrl": "https://www.lvmh.com",
+      "deadline": "Typically autumn / spring — confirm per group",
+      "searchTerms": [
+        "LVMH",
+        "L'Oréal",
+        "Kering",
+        "Hermès",
+        "graduate",
+        "Paris",
+        "2027"
+      ],
+      "steps": [
+        "Check each group's early-careers page.",
+        "Apply once per group; list Hong Kong or Singapore as a rotation preference."
+      ],
+      "portalTips": "L'Oréal's Paris management trainee scheme explicitly places trainees in Asia.",
+      "deadlineNote": "Confirm per group.",
+      "visaTier": "likely",
+      "languageReq": "none",
+      "langBonus": [
+        "French"
+      ]
+    },
+    {
+      "id": "oecd-unesco",
+      "company": "OECD / UNESCO / OIE (Paris international organisations)",
+      "title": "Junior Professional / Young Associate / Internship",
+      "location": "Paris",
+      "region": "FR",
+      "sectors": [
+        "International organisation",
+        "Policy",
+        "Development"
+      ],
+      "keywords": [],
+      "description": "Paris hosts the OECD, UNESCO and several other IOs. Entry is via young-professional programmes and paid internships, in English and French.",
+      "fit": "International development and policy, in English, with French as the second language they actually want. The OECD Young Associates programme takes recent graduates for two years.",
+      "applyUrl": "https://www.oecd.org/careers",
+      "deadline": "OECD Young Associates typically opens in spring — confirm",
+      "searchTerms": [
+        "OECD",
+        "Young Associates",
+        "UNESCO",
+        "junior professional",
+        "internship",
+        "Paris"
+      ],
+      "steps": [
+        "Check the OECD careers page for Young Associates and internships.",
+        "Check UNESCO careers separately.",
+        "Apply in English; note French and Dutch."
+      ],
+      "portalTips": "IO recruitment is slow; apply six months ahead of when you'd want to start.",
+      "deadlineNote": "Confirm.",
+      "visaTier": "likely",
+      "languageReq": "French an asset",
       "langBonus": [
         "French"
       ]

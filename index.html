@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Lola · HK Opportunities — rank Hong Kong graduate roles" />
-  <title>Lola · HK Opportunities</title>
+  <title>Lola · Opportunities</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -258,6 +258,14 @@
       flex-wrap: wrap;
       gap: 6px;
     }
+    .filters.regions { margin-bottom: 8px; }
+    .region-btn {
+      min-height: 32px; padding: 4px 12px; border-radius: 8px; border: 1px solid var(--line);
+      background: transparent; color: var(--ink-soft); font: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer;
+    }
+    .region-btn[aria-pressed="true"] { background: var(--accent, #1f6f6b); border-color: transparent; color: #fff; }
+    .region-btn:focus-visible { outline: 2px solid var(--accent, #1f6f6b); outline-offset: 2px; }
+    .digest-region { margin: 6px 0 2px; font-size: 0.78rem; font-weight: 600; color: var(--ink-soft); text-transform: none; }
     .filter-btn {
       min-height: 36px;
       padding: 6px 12px;
@@ -786,7 +794,7 @@
   <div id="gate" role="dialog" aria-labelledby="gate-title" aria-modal="true">
     <div class="gate-card">
       <p class="gate-kicker">Private prototype</p>
-      <h1 id="gate-title">Lola · HK Opportunities</h1>
+      <h1 id="gate-title">Lola · Opportunities</h1>
       <p>A calm place to review and rank Hong Kong graduate roles. Enter the shared password to unlock.</p>
       <form class="gate-form" id="gate-form" autocomplete="off">
         <label class="visually-hidden" for="password" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Password</label>
@@ -801,8 +809,8 @@
     <header class="topbar">
       <div class="topbar-inner">
         <div class="brand">
-          <h1>Lola · HK Opportunities</h1>
-          <span>Graduate / analyst shortlist · Hong Kong</span>
+          <h1>Lola · Opportunities</h1>
+          <span>Graduate / analyst shortlist · Hong Kong first, Europe in parallel</span>
         </div>
         <div class="top-actions">
           <button type="button" class="btn-primary" id="email-shortlist-btn">Email shortlist</button>
@@ -835,6 +843,13 @@
         <div class="toolbar">
           <div class="progress" id="progress" aria-live="polite">0 of 0 ranked</div>
           <section class="digest" id="digest" aria-label="This week" hidden></section>
+      <div class="filters regions" role="group" aria-label="Filter by region">
+            <button type="button" class="region-btn" data-region="all" aria-pressed="true">All cities</button>
+            <button type="button" class="region-btn" data-region="asia" aria-pressed="false">Asia</button>
+            <button type="button" class="region-btn" data-region="UK" aria-pressed="false">London</button>
+            <button type="button" class="region-btn" data-region="NL" aria-pressed="false">Amsterdam</button>
+            <button type="button" class="region-btn" data-region="FR" aria-pressed="false">Paris</button>
+          </div>
       <div class="filters" role="group" aria-label="Filter by rank">
             <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
             <button type="button" class="filter-btn" data-filter="unranked" aria-pressed="false">Unranked</button>
@@ -888,7 +903,7 @@
     </main>
 
     <p class="footer-note">
-      Prototype for personal use · Rankings stay in this browser (localStorage)
+      Prototype for personal use · Rankings are saved to the shared sheet
     </p>
   </div>
 
@@ -976,6 +991,15 @@
 
       let state = loadState();
       let filter = "all";
+      let region = "all";
+      const ASIA = ["HK", "SG", "SEA"];
+      const REGION_NAME = { HK: "Hong Kong", SG: "Singapore", SEA: "Southeast Asia", UK: "London", NL: "Amsterdam", FR: "Paris" };
+      function jobRegion(job) { return job.region || "HK"; }
+      function inRegion(job) {
+        if (region === "all") return true;
+        if (region === "asia") return ASIA.includes(jobRegion(job));
+        return jobRegion(job) === region;
+      }
 
       function loadState() {
         try {
@@ -1055,9 +1079,12 @@
         const unranked = JOBS.filter((j) => !getJobState(j.id).rank).length;
         if (!closing.length && !fresh.length) { el.hidden = true; return; }
         const row = (j, extra) => `<li><a href="#" data-jump="${j.id}"><strong>${escapeHtml(j.company)}</strong> — ${escapeHtml(j.title)}</a> <span>${escapeHtml(extra)}</span></li>`;
+        const ORDER = ["HK", "SG", "SEA", "UK", "NL", "FR"];
+        const byRegion = (arr, extra) => ORDER.filter((r) => arr.some((j) => jobRegion(j) === r))
+          .map((r) => `<p class="digest-region">${REGION_NAME[r]}</p><ul>${arr.filter((j) => jobRegion(j) === r).map((j) => row(j, extra(j))).join("")}</ul>`).join("");
         el.innerHTML = `
-          ${closing.length ? `<h3>Closing in the next 14 days</h3><ul>${closing.map((j) => row(j, "by " + j.deadlineDate)).join("")}</ul>` : ""}
-          ${fresh.length ? `<h3>New this week</h3><ul>${fresh.map((j) => row(j, j.location)).join("")}</ul>` : ""}
+          ${closing.length ? `<h3>Closing in the next 14 days</h3>${byRegion(closing, (j) => "by " + j.deadlineDate)}` : ""}
+          ${fresh.length ? `<h3>New this week</h3>${byRegion(fresh, (j) => j.location)}` : ""}
           ${unranked ? `<p class="digest-foot">${unranked} role${unranked === 1 ? "" : "s"} still unranked.</p>` : ""}`;
         el.hidden = false;
       }
@@ -1137,67 +1164,6 @@
         return { drawn, less, summary, counts };
       }
 
-      function exportJson() {
-        const insights = computeInsights();
-        const rankings = JOBS.map((job) => {
-          const s = getJobState(job.id);
-          return {
-            id: job.id,
-            company: job.company,
-            title: job.title,
-            location: job.location,
-            sectors: job.sectors,
-            keywords: job.keywords,
-            rank: s.rank,
-            note: s.note || "",
-            flagForIntro: !!s.flag,
-            visaTier: job.visaTier || "unknown",
-            languageReq: job.languageReq || "none",
-            langBonus: job.langBonus || [],
-            applyUrl: job.applyUrl,
-            deadline: job.deadline,
-            applyGuidance: {
-              searchTerms: job.searchTerms || [],
-              steps: job.steps || [],
-              portalTips: job.portalTips || "",
-              deadlineNote: job.deadlineNote || ""
-            }
-          };
-        });
-        const payload = {
-          meta: {
-            title: "Lola · HK Opportunities",
-            candidate: "Lola Jones",
-            programme: "MA (Hons) International Relations, University of St Andrews",
-            graduation: "June 2027",
-            preferenceStack: [
-              "consulting/strategy",
-              "political risk/research",
-              "finance macro/markets",
-              "wide net"
-            ],
-            exportedAt: new Date().toISOString(),
-            ranked: rankedCount(),
-            total: JOBS.length
-          },
-          rankings,
-          preferenceSummary: {
-            drawnTo: insights.drawn,
-            lessDrawnTo: insights.less,
-            plainEnglish: insights.summary,
-            tally: insights.counts
-          }
-        };
-        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-        const a = document.createElement("a");
-        a.href = URL.createObjectURL(blob);
-        a.download = "lola-preferences.json";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-      }
-
       function renderInsights() {
         const { drawn, less, summary, counts } = computeInsights();
         const drawnEl = document.getElementById("drawn-to");
@@ -1233,6 +1199,7 @@
 
       function filteredJobs() {
         return JOBS.filter((job) => {
+          if (!inRegion(job)) return false;
           const rank = getJobState(job.id).rank;
           if (filter === "all") return true;
           if (filter === "unranked") return !rank;
@@ -1246,6 +1213,9 @@
 
         document.querySelectorAll(".filter-btn").forEach((btn) => {
           btn.setAttribute("aria-pressed", btn.dataset.filter === filter ? "true" : "false");
+        });
+        document.querySelectorAll(".region-btn").forEach((btn) => {
+          btn.setAttribute("aria-pressed", btn.dataset.region === region ? "true" : "false");
         });
 
         const list = document.getElementById("job-list");
@@ -1482,12 +1452,19 @@
         const a = e.target.closest("[data-jump]");
         if (!a) return;
         e.preventDefault();
-        filter = "all"; render();
+        filter = "all"; region = "all"; render();
         const card = document.querySelector(`.job-card[data-id="${a.dataset.jump}"]`);
         if (card) card.scrollIntoView({ behavior: "smooth", block: "start" });
       });
 
-      document.querySelector(".filters").addEventListener("click", (e) => {
+      document.querySelector(".filters.regions").addEventListener("click", (e) => {
+        const btn = e.target.closest(".region-btn");
+        if (!btn) return;
+        region = btn.dataset.region;
+        render();
+      });
+
+      document.querySelector(".filters:not(.regions)").addEventListener("click", (e) => {
         const btn = e.target.closest(".filter-btn");
         if (!btn) return;
         filter = btn.dataset.filter;
